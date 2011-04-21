@@ -10,10 +10,10 @@ import javax.microedition.khronos.opengles.GL10;
 public class Square {
 	// Our vertices.
 	private float vertices[] = {
-		      -0.2f,  0.5f, 0.0f,  // 0, Top Left
-		      -0.2f, -0.5f, 0.0f,  // 1, Bottom Left
-		      0.5f, -0.5f, 0.0f,  // 2, Bottom Right
-		      0.5f,  0.5f, 0.0f,  // 3, Top Right
+		      -0.2f,  0.2f, 0.0f,  // 0, Top Left
+		      -0.2f, -0.2f, 0.0f,  // 1, Bottom Left
+		      0.2f, -0.2f, 0.0f,  // 2, Bottom Right
+		      0.2f,  0.2f, 0.0f,  // 3, Top Right
 		};
 
 	// The order we like to connect them.
@@ -64,7 +64,7 @@ public class Square {
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, // OpenGL docs
                                  vertexBuffer);
 
-		gl.glColor4f(0.7f, 0.3f, 0.3f, 0.5f);
+		gl.glColor4f(0.3f, 0.3f, 0.3f, 0.5f);
 		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,// OpenGL docs
 				  GL10.GL_UNSIGNED_SHORT, indexBuffer);
 
