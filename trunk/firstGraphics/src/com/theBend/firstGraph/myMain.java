@@ -43,8 +43,7 @@ class ClearGLSurfaceView extends GLSurfaceView {
     public boolean onTouchEvent(final MotionEvent event) {
         queueEvent(new Runnable(){
             public void run() {
-                mRenderer.setColor(event.getX() / getWidth(),
-                        event.getY() / getHeight(), 1.0f);
+                mRenderer.setColor(event.getX() / getWidth(),event.getY() / getHeight(), 1.0f);
             }});
             return true;
         }
@@ -103,12 +102,13 @@ class ClearRenderer implements GLSurfaceView.Renderer {
         
         gl.glClearColor(mRed, mGreen, mBlue, 1.0f);
         gl.glTranslatef(0, 0, (float)(5 * Math.sin(mAngle) - 7));
+        //gl.glTranslatef(0, 0, 1.0f);
         
         gl.glRotatef((float)(45 * Math.sin(rAngle)), 0, 1, 0);
         
         square.draw(gl);
         
-        rAngle++;
+        rAngle+=0.5;
         mAngle += 0.1;
     }
 
