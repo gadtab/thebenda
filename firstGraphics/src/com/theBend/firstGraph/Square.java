@@ -48,7 +48,7 @@ public class Square {
 	 * @param gl
 	 */
 	public void draw(GL10 gl) {
-		gl.glColor4f(0.7f, 0.3f, 0.3f, 0.5f);
+//		gl.glColor4f(0.7f, 0.3f, 0.3f, 0.5f);
 		// Counter-clockwise winding.
 		gl.glFrontFace(GL10.GL_CCW); // OpenGL docs
 		// Enable face culling.
@@ -64,6 +64,7 @@ public class Square {
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, // OpenGL docs
                                  vertexBuffer);
 
+		gl.glColor4f(0.7f, 0.3f, 0.3f, 0.5f);
 		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,// OpenGL docs
 				  GL10.GL_UNSIGNED_SHORT, indexBuffer);
 
