@@ -10,10 +10,10 @@ import javax.microedition.khronos.opengles.GL10;
 public class Square {
 	// Our vertices.
 	private float vertices[] = {
-		      -0.2f,  0.2f, 0.0f,  // 0, Top Left
-		      -0.2f, -0.2f, 0.0f,  // 1, Bottom Left
-		      0.2f, -0.2f, 0.0f,  // 2, Bottom Right
-		      0.2f,  0.2f, 0.0f,  // 3, Top Right
+		      -1f,  1f, 0.0f,  // 0, Top Left
+		      -1f, -1f, 0.0f,  // 1, Bottom Left
+		      1f, -1f, 0.0f,  // 2, Bottom Right
+		      1f,  1f, 0.0f,  // 3, Top Right
 		};
 
 	// The order we like to connect them.
@@ -48,7 +48,7 @@ public class Square {
 	 * @param gl
 	 */
 	public void draw(GL10 gl) {
-		gl.glColor4f(0.2f, 0.5f, 0.6f, 0.5f);
+		//gl.glColor4f(0.2f, 0.5f, 0.6f, 0.5f);
 		// Counter-clockwise winding.
 		gl.glFrontFace(GL10.GL_CCW); // OpenGL docs
 		// Enable face culling.
@@ -64,8 +64,62 @@ public class Square {
 		gl.glVertexPointer(3, GL10.GL_FLOAT, 0, // OpenGL docs
                                  vertexBuffer);
 
-		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,// OpenGL docs
-				  GL10.GL_UNSIGNED_SHORT, indexBuffer);
+//		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,// OpenGL docs
+//				  GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		
+		
+		// back
+		gl.glPushMatrix();
+		gl.glTranslatef(0, 0, -1);
+		gl.glRotatef(180, 0, 1, 0);
+		gl.glColor4f(1, 1, 0, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();
+		
+		// front
+		gl.glPushMatrix();
+		gl.glTranslatef(0, 0, 1);
+		gl.glColor4f(0.5f, 0.5f, 0, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();
+		
+		// left
+		gl.glPushMatrix();
+		gl.glTranslatef(-1, 0, 0);
+		gl.glRotatef(-90, 0, 1, 0);
+		gl.glColor4f(0, 1, 1, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();	
+		
+		// bottom
+		gl.glPushMatrix();
+		gl.glTranslatef(0, -1, 0);
+		gl.glRotatef(90, 1, 0, 0);
+		gl.glColor4f(1, 0, 1, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();			
+		
+		// top
+		gl.glPushMatrix();
+		gl.glTranslatef(0, 1, 0);
+		gl.glRotatef(-90, 1, 0, 0);
+		gl.glColor4f(0.5f, 0, 0.5f, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();	
+		
+		// right
+		gl.glPushMatrix();
+		gl.glTranslatef(1, 0, 0);
+		gl.glRotatef(90, 0, 1, 0);
+		gl.glColor4f(0, 0.5f, 0.5f, 1);
+//		gl.glDrawArrays(GL10.GL_TRIANGLE_STRIP, 0, 4);
+		gl.glDrawElements(GL10.GL_TRIANGLES, indices.length,GL10.GL_UNSIGNED_SHORT, indexBuffer);
+		gl.glPopMatrix();
 
 		// Disable the vertices buffer.
 		gl.glDisableClientState(GL10.GL_VERTEX_ARRAY); // OpenGL docs
