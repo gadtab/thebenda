@@ -9,4 +9,12 @@
     android:layout_height="wrap_content" 
     android:text="@string/hello"
     />
+<Button 
+	android:text="Benda" 
+	android:id="@+id/bBenda" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:textSize = "25dp"
+	android:textStyle="bold">
+	</Button>
 </LinearLayout>
