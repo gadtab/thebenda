@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Or Benda is Here...</string>
-    <string name="app_name">First App</string>
+    <string name="hello">Hello World, Or Benda is In Da House...</string>
+    <string name="app_name">The Benda</string>
+    <string name="camera">Camera</string>
+    <string name="aboutUs">About Us</string>
+    <string name="prefs">Preferences</string>
+    <string name="aboutUsText">Benda is the coolest person I know...\n\nBla bla bla bla.\n\nThis is the popup window!</string>
+    <string name="exitText">Exit</string>
+    <string name="total">Your Total is: </string>
 </resources>

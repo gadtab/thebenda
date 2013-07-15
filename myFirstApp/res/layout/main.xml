@@ -6,15 +6,86 @@
     >
 <TextView  
     android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
+    android:layout_height="wrap_content"
+    android:id="@+id/tvHello"
     android:text="@string/hello"
     />
+
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total"
+            android:id="@+id/tvTotal"
+            android:textSize="30dp"
+            android:gravity="center"
+            />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:padding="50dp"
+                  android:weightSum="100"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+            >
+        <Button
+                android:text="Add One"
+                android:id="@+id/bAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:textSize = "25dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="#000000">
+        </Button>
+
+        <Button
+                android:text="Sub One"
+                android:id="@+id/bSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize = "25dp"
+                android:layout_weight="50"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:background="#000000">
+        </Button>
+    </LinearLayout>
+
 <Button 
-	android:text="Benda" 
+	android:background="@drawable/custom_button"
 	android:id="@+id/bBenda" 
-	android:layout_width="fill_parent" 
+	android:layout_width="wrap_content"
 	android:layout_height="wrap_content"
 	android:textSize = "25dp"
-	android:textStyle="bold">
+	android:textStyle="bold"
+    android:layout_gravity="center"
+    >
 	</Button>
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="100"
+    android:orientation="horizontal"
+    >
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etNotify"
+            android:layout_gravity="center"
+            android:layout_weight="80"
+            />
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notify"
+            android:id="@+id/bNotify"
+            android:onClick="createNotification"
+            android:layout_gravity="center"
+            android:layout_weight="20"
+            />
+</LinearLayout>
+
 </LinearLayout>
