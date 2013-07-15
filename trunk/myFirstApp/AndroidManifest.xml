@@ -3,9 +3,16 @@
       package="com.theBend"
       android:versionCode="1"
       android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="8" />
+    <uses-sdk android:minSdkVersion="11" />
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            >
         <activity android:name=".myMain"
                   android:label="@string/app_name">
             <intent-filter>
@@ -13,12 +20,77 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-		<activity android:name=".startApp"
-                  android:label="@string/app_name">
+		<activity android:name=".myMenu"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                >
             <intent-filter>
                 <action android:name="com.thebend.STARTSCREEN" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AboutUs"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.Dialog"
+                >
+            <intent-filter>
+                <action android:name="com.thebend.ABOUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Prefs"
+                  android:label="@string/app_name"
+                >
+            <intent-filter>
+                <action android:name="com.thebend.PREFS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".startApp"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|keyboardHidden"
+                >
+            <intent-filter>
+                <action android:name="com.thebend.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".crazyText"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".Email"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".camera"
+                  android:label="@string/camera"
+                  android:screenOrientation="portrait"
+                >
+        </activity>
+        <activity android:name=".SoundStuff"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".data"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".OpenedClass"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".GFX"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".GFXSurface"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".Slider"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".Tabs"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".TestCamera"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait"
+                >
         </activity>
     </application>
 </manifest>
